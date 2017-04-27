@@ -1,6 +1,6 @@
-package src.main.java.webcrawler.model;
+package webcrawler.model;
 
-import src.main.java.webcrawler.utils.WebDriverUtils;
+import webcrawler.utils.WebDriverUtils;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -8,8 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import netd.config.Config;
-import netd.webcrawler.utils.WebDriverUtils;
+import webcrawler.config.Config;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,9 +32,9 @@ public class WebWalker {
 		WebDriverUtils.clickButton(driver,by);
 	}
 	
-	/**Iterate all links in Talent Suite.
-	 * 
-	 * @param driver
+	/**
+	 * Iterate all links in Talent Suite.
+	 *
 	 */
 	public void runClickAllLinks(){
 		
@@ -48,8 +47,8 @@ public class WebWalker {
 	    WebDriver driver = WebDriverUtils.getWebDriver_new(fxProfile);
 		
 		
-		ArrayList<String> toVisitLinks = new ArrayList<String>();
-		ArrayList<String> visitedLinks = new ArrayList<String>();
+		ArrayList<String> toVisitLinks = new ArrayList<>();
+		ArrayList<String> visitedLinks = new ArrayList<>();
 		toVisitLinks.add(Config.getInstance().getProperty("loginURL"));
 		int maxVisit = 10;
 		int counter = 1;
