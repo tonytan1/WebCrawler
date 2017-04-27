@@ -1,10 +1,9 @@
-package src.main.java.webcrawler.utils;
+package webcrawler.utils;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -33,7 +32,7 @@ public class WebDriverUtils {
 	}
 
 
-	public static WebDriver getWebDriver_new() {
+	public static WebDriver getWebDriver_new() throws Exception {
 		WebDriver driver = getWebDriver_new(WebDriverUtils.Type.FireFox);
 		return driver;
 	}
@@ -43,7 +42,7 @@ public class WebDriverUtils {
 		return driver;
 	}
 
-	public static WebDriver getWebDriver_new(Type browser_type) {
+	public static WebDriver getWebDriver_new(Type browser_type) throws Exception{
 		WebDriver driver = null;
 		switch (browser_type) {
 		case FireFox:
@@ -60,7 +59,7 @@ public class WebDriverUtils {
 			break;
 		}
 
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
+		driver.manage().wait(3000);
 		return driver;
 	}
 

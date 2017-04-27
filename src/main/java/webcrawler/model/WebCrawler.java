@@ -1,12 +1,12 @@
-package src.main.java.webcrawler.model;
+package webcrawler.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import netd.config.Config;
-import netd.webcrawler.utils.CheckerUtils;
-import netd.webcrawler.utils.IOUtils;
-import netd.webcrawler.utils.WebDriverUtils;
+import webcrawler.config.Config;
+import webcrawler.utils.CheckerUtils;
+import webcrawler.utils.IOUtils;
+import webcrawler.utils.WebDriverUtils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +29,7 @@ public class WebCrawler {
 	ArrayList<String> visitedLinks = new ArrayList<String>();
 	CheckerUtils checker = new CheckerUtils();
 	
-	public void visitAllLists(){
+	public void visitAllLists() throws Exception{
 		WebDriver driver = WebDriverUtils.getWebDriver_new();
 		this.login(driver, Config.getInstance().getProperty("loginURL"));
 		

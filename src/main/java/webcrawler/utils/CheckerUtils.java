@@ -1,4 +1,4 @@
-package netd.webcrawler.utils;
+package webcrawler.utils;
 
 import org.openqa.selenium.WebDriver;
 

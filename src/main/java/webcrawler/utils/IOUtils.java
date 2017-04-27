@@ -1,4 +1,4 @@
-package netd.webcrawler.utils;
+package webcrawler.utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

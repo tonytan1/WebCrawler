@@ -1,11 +1,11 @@
-package src.main.java.webcrawler.controller;
+package webcrawler.controller;
 
 import java.util.ArrayList;
 
-import netd.config.Config;
-import netd.webcrawler.model.WebCrawler;
-import netd.webcrawler.model.WebCrawlerThread;
-import netd.webcrawler.utils.IOUtils;
+import webcrawler.model.WebCrawlerThread;
+import webcrawler.model.WebCrawler;
+import webcrawler.config.Config;
+import webcrawler.utils.IOUtils;
 
 public class TestDriver {
 	
@@ -13,7 +13,7 @@ public class TestDriver {
 		return IOUtils.loadFile_special(file_str);		
 	}
 	
-	public void startWebCrawlerThreads(int threadNo){
+	public void startWebCrawlerThreads(int threadNo) throws Exception{
 		String file_str = Config.getInstance().getProperty("screenShotDir")+"/"+"WebWalker.log";
 		ArrayList<String> links = this.loadLinkSet(file_str);
 		
@@ -28,7 +28,7 @@ public class TestDriver {
 		}
 	}
 	
-	public void dispatcher(int flag){
+	public void dispatcher(int flag) throws Exception{
 		switch(flag){
 			case 1: 
 				WebCrawler ins = new WebCrawler();
@@ -43,7 +43,7 @@ public class TestDriver {
 		}
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		int flag = 1;
 		TestDriver driver = new TestDriver();
 		driver.dispatcher(flag);
